@@ -9,9 +9,10 @@ import scrapy
 
 
 class VnexpressItem(scrapy.Item):
-    post_date = scrapy.Field()
+    url = scrapy.Field()
+    date = scrapy.Field()
+    intro = scrapy.Field()
     title = scrapy.Field()
-    short_intro = scrapy.Field()
-    long_content = scrapy.Field()
+    content = scrapy.Field()
     comments = scrapy.Field()
     tags = scrapy.Field()

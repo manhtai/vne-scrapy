@@ -29,12 +29,13 @@ class SohoaSpider(scrapy.Spider):
         item = VnexpressItem()
         post_date = response.css('div.block_timer::text'
                                  ).extract()
-        item['post_date'] = [p.strip() for p in post_date]
+        item['url'] = response.url
+        item['date'] = [p.strip() for p in post_date[:2]]
+        item['intro'] = response.css('div.short_intro::text'
+                                     ).extract_first().strip()
         item['title'] = response.xpath('//div[@class="title_news"]/h1/text()'
                                        ).extract_first().strip()
-        item['short_intro'] = response.css('div.short_intro::text'
-                                           ).extract_first().strip()
-        item['long_content'] = response.xpath(
+        item['content'] = response.xpath(
             '//div[contains(@class, "fck_detail")]//p//text()'
         ).extract()
 
