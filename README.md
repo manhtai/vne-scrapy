@@ -24,6 +24,6 @@ VnExpress crawler
 
 ## Alternatives
 
-- To get AJAX content: Selenium/PhantomJS
-- To save data: MongoDB
+- To get AJAX content: Selenium+PhantomJS, Splash+ScrapyJS
+- To save data: MongoDB, ElasticSearch
 
